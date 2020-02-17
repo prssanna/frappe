@@ -163,7 +163,7 @@ frappe.ui.form.on('Dashboard Chart', {
 		if (frm.chart_filters && frm.chart_filters.length) {
 			frm.trigger('render_filters_table');
 		} else {
-			if (frm.doc.chart_type==='Custom') {
+			if (frm.doc.chart_type === 'Custom') {
 				if (frm.doc.source) {
 					frappe.xcall('frappe.desk.doctype.dashboard_chart_source.dashboard_chart_source.get_config', {name: frm.doc.source})
 						.then(config => {
@@ -284,7 +284,7 @@ frappe.ui.form.on('Dashboard Chart', {
 					doctype: frm.doc.document_type,
 					on_change: () => {},
 				});
-		
+
 				frm.filter_group.add_filters_to_filter_group(filters);
 			}
 

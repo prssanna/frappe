@@ -9,6 +9,7 @@ def get_data():
 			"label": _("Core"),
 			"icon": "fa fa-wrench",
 			"items": [
+				
 				{
 					"type": "doctype",
 					"name": "System Settings",

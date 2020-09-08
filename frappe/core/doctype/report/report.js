@@ -1,10 +1,5 @@
 frappe.ui.form.on('Report', {
 	refresh: function(frm) {
-		if (frm.doc.is_standard === "Yes" && !frappe.boot.developer_mode) {
-			// make the document read-only
-			frm.set_read_only();
-		}
-
 		let doc = frm.doc;
 		frm.add_custom_button(__("Show Report"), function() {
 			switch(doc.report_type) {
@@ -33,7 +28,7 @@ frappe.ui.form.on('Report', {
 			}, doc.disabled ? "fa fa-check" : "fa fa-off");
 		}
 
-		frm.events.report_type(frm);
+		frm.events.report_type && frm.events.report_type(frm);
 	},
 
 	ref_doctype: function(frm) {
